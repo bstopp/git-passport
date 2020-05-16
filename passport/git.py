@@ -90,7 +90,7 @@ def config_set(config, value, property):
             "git",
             "config",
             "--local",
-            "user." + property,
+            property,
             value
         ], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 

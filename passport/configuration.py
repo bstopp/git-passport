@@ -87,6 +87,7 @@ def validate_scheme(filename):
         "email",
         "enable_hook",
         "name",
+        "signingkey",
         "service",
         "sleep_duration",
         "quiet"

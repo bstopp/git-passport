@@ -76,8 +76,11 @@ if __name__ == "__main__":
 
         selected_id = dialog.get_input(candidates.keys())
         if selected_id is not None:
-            git.config_set(config, candidates[selected_id]["email"], "email")
-            git.config_set(config, candidates[selected_id]["name"], "name")
+            git.config_set(config, candidates[selected_id]["email"], "user.email")
+            git.config_set(config, candidates[selected_id]["name"], "user.name")
+            if "signingkey" in candidates[selected_id]:
+                git.config_set(config, candidates[selected_id]["signingkey"], "user.signingkey")
+                git.config_set(config, "true", "commit.gpgsign")
             sys.exit(0)
     else:
         print("git-passport is currently disabled.")
