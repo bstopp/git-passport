@@ -81,6 +81,9 @@ if __name__ == "__main__":
             if "signingkey" in candidates[selected_id]:
                 git.config_set(config, candidates[selected_id]["signingkey"], "user.signingkey")
                 git.config_set(config, "true", "commit.gpgsign")
+            else:
+                git.config_set(config, "user.signingkey", "--unset")
+                git.config_set(config, "false", "commit.gpgsign")
             sys.exit(0)
     else:
         print("git-passport is currently disabled.")
